@@ -2,39 +2,43 @@ body{
   margin:0;
   background-color:black;
 }
-#menu{
-  height:10svh;
-  width:10svh;
-  background:rgba(85,204,204,0.5);
-  position:fixed;
-  top:0;
-  left:0;
-}
 header{
   text-align:center;
-  font-size:5vh;
+  font-size:3svh;
+  color:white;
   display:inline;
   position:fixed;
   top:0;
   left:0;
-  height:10svh;
+  height:5svh;
   width: 100%;
   background:linear-gradient(0deg, black, #55bbbb);
 }
-header button{
-  position:fixed;
+button{
+  border-radius:3px;
+}
+#sidebar button{
+  display:block;
   height:10svh;
-  width:20svw;
-  top:0;
+  width:20vw;
   overflow:clip;
   background-color:#55bbbb;
 }
-.headerL{left:0;}
-.headerR{right:0;}
+#sidebar{
+  z-index:2;
+  height:100svh;
+  width:40vw;
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  background:rgba(55,100,100,0.5);
+}
 #display{
   color:white;
   height:20svh;
   width:100%;
+  padding-top:5svh;
   overflow:scroll;
   text-align:right;
   vertical-align:text-bottom;
@@ -48,6 +52,9 @@ header button{
   background:linear-gradient(0deg,#55cccc,black);
   overflow:clip;
 }
+.buttons .wide{
+  grid-column:span 2;
+}
 .buttons button{
   width:100%;
   font-size:6vw;
@@ -55,9 +62,13 @@ header button{
   background:rgba(85,204,204,0.5);
   overflow:clip;
 } 
-.buttons .wide{
-  grid-column:span 2;
-}
-button{
-  border-radius:3px;
+.menuButton{
+  height:5svh;
+  width:5svh;
+  overflow:clip;
+  background-color:#55bbbb;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1;
 }

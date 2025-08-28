@@ -6,8 +6,13 @@ function fullscreenToggle(){
     document.exitFullscreen();
   }
 }
-function toggleHeader(){
-  alert(document.querySelector('header').style.display);
+function toggleHeader(isTrue){
+  if(isTrue){
+    document.getElementById('sidebar').style.display='inline';
+  }
+  else{
+    document.getElementById('sidebar').style.display='none';
+  }
 }
 function clear(){
   const display=document.getElementById('display');
