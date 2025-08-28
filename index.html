@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Calculator</title>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#55bbbb">
+    <meta name="viewport" content="scale=initial-scale,width=device-width">
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <button id='menu' onclick="toggleHeader()">&#9744;</button>
+    <header>
+      <button class="headerL" onclick="location.reload()">Reload</button>
+      <button class="headerR" onclick="fullscreenToggle()">Fullscreen</button>
+      Calculator
+    </header>
+    <article>
+      <section id="display">0</section>
+      <section class="buttons">
+        <button onclick="main('ac')">AC</button>
+        <button onclick="main('clr')">CLR</button>
+        <button onclick="main('dot')">.</button>
+        <button onclick="main('divide')">/</button>
+        <button onclick="main('7')">7</button>
+        <button onclick="main('8')">8</button>
+        <button onclick="main('9')">9</button>
+        <button onclick="main('multiply')">*</button>
+        <button onclick="main('4')">4</button>
+        <button onclick="main('5')">5</button>
+        <button onclick="main('6')">6</button>
+        <button onclick="main('minus')">-</button>
+        <button onclick="main('1')">1</button>
+        <button onclick="main('2')">2</button>
+        <button onclick="main('3')">3</button>
+        <button onclick="main('plus')">+</button>
+        <button onclick="main('0')" class="wide">0</button>
+        <button onclick="main('equal')" class="wide">=</button>
+      </section>
+    </article>
+  </body>
+</html>
+

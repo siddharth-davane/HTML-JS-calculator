@@ -1,0 +1,62 @@
+function fullscreenToggle(){
+  if(document.fullscreen==false){
+    document.querySelector('body').requestFullscreen();
+  }
+  else{
+    document.exitFullscreen();
+  }
+}
+function toggleHeader(){
+  alert(document.querySelector('header').style.display);
+}
+function clear(){
+  const display=document.getElementById('display');
+  str = display.innerHTML;
+  display.innerHTML = str.slice(0,-1,);
+  if (display.innerHTML == ''){
+    display.innerHTML ='0';
+  }
+}
+
+
+function clrOnZero(){
+const display=document.getElementById('display');
+  if(display.innerHTML=='0'){
+    display.innerHTML='';
+  }
+}
+
+
+// Main function, entry point
+function main(input){
+
+  const display=document.getElementById('display');
+
+  switch(input){
+    case '1' :
+    case '2' :
+    case '3' :
+    case '4' :
+    case '5' :
+    case '6' :
+    case '7' :
+    case '8' :
+    case '9' :
+    case '0' :
+      clrOnZero();
+      display.innerHTML+= input;
+      break;
+
+    case 'clr' :
+      clear();
+      break;
+
+    case 'ac' :
+      display.innerHTML='0';
+      break;
+      
+    default:
+      alert("Button not found or implemented");
+      break;
+  }
+}
