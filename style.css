@@ -19,8 +19,7 @@ button{
 }
 #sidebar button{
   display:block;
-  height:10svh;
-  width:20vw;
+  min-width:20vw;
   overflow:clip;
   background-color:#55bbbb;
 }
@@ -35,11 +34,11 @@ button{
   background:rgba(55,100,100,0.5);
 }
 #display{
+  overflow-wrap:break-word;
   color:white;
   height:15svh;
   width:100%;
   padding-top:5svh;
-  overflow:scroll;
   text-align:right;
   vertical-align:text-bottom;
 }
