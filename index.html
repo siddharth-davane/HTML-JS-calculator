@@ -6,7 +6,6 @@
     <meta name="theme-color" content="#55bbbb">
     <meta name="viewport" content="scale=initial-scale,width=device-width">
     <link href="style.css" rel="stylesheet">
-    <script src="script.js" type="text/javascript"></script>
     <!-- math.js library -->
     <script src="math.js" type="text/javascript"></script>
   </head>
@@ -16,6 +15,8 @@
       <button onclick="toggleHeader(0)">&#9746;</button>
       <button onclick="location.reload()">Reload</button>
       <button onclick="fullscreenToggle()">Fullscreen</button>
+      <button onclick="eventTests()">Event Tests</button>
+      <button onclick="eventDemo()">Event Demo</button>
     </div>
     <header>
       Calculator
@@ -23,26 +24,27 @@
     <article>
       <section id="display">0</section>
       <section class="buttons">
-        <button onclick="main('ac')">AC</button>
-        <button onclick="main('clr')">CLR</button>
-        <button onclick="main('dot')">.</button>
-        <button onclick="main('/')">/</button>
-        <button onclick="main('7')">7</button>
-        <button onclick="main('8')">8</button>
-        <button onclick="main('9')">9</button>
-        <button onclick="main('*')">*</button>
-        <button onclick="main('4')">4</button>
-        <button onclick="main('5')">5</button>
-        <button onclick="main('6')">6</button>
-        <button onclick="main('-')">-</button>
-        <button onclick="main('1')">1</button>
-        <button onclick="main('2')">2</button>
-        <button onclick="main('3')">3</button>
-        <button onclick="main('+')">+</button>
-        <button onclick="main('0')" class="wide">0</button>
-        <button onclick="main('equal')" class="wide">=</button>
+        <button>AC</button>
+        <button>CLR</button>
+        <button>.</button>
+        <button>/</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>*</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>-</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>+</button>
+        <button class="wide">0</button>
+        <button class="wide">=</button>
       </section>
     </article>
+    <script src="script.js" type="text/javascript"></script>
   </body>
 </html>
 

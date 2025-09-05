@@ -44,6 +44,17 @@ function clrOnOperator(){
   {clear();}
 }
 
+
+// Event Listener
+function eventDemo(){
+  document.querySelectorAll('.buttons button')
+    .forEach( (button) => button.addEventListener('click', (e) => {main(e.target.innerText)}));
+}
+function eventTests(){
+  document.querySelectorAll('.buttons button')
+    .forEach( (button) => button.addEventListener('click', (e) => alert(e.target.innerText)));
+}
+
 // Main function, entry point
 function main(input){
 
@@ -64,15 +75,15 @@ function main(input){
       display.innerHTML+= input;
       break;
 
-    case 'clr' :
+    case 'CLR' :
       clear();
       break;
 
-    case 'ac' :
+    case 'AC' :
       display.innerHTML='0';
       break;
       
-    case 'dot':
+    case '.':
       clrOnOperator('.');
       display.innerHTML+='.';
       break;
@@ -85,7 +96,7 @@ function main(input){
       display.innerHTML+=input;
       break;
 
-    case 'equal':
+    case '=':
       let q= display.innerHTML;
       let a= math.evaluate(q);
       display.innerHTML = a;
