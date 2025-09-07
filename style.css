@@ -17,12 +17,6 @@ header{
 button{
   border-radius:3px;
 }
-#sidebar button{
-  display:block;
-  min-width:20vw;
-  overflow:clip;
-  background-color:#55bbbb;
-}
 #sidebar{
   z-index:2;
   height:100svh;
@@ -33,6 +27,19 @@ button{
   left:0;
   background:rgba(55,100,100,0.5);
 }
+#sidebar button{
+  display:block;
+  min-width:20vw;
+  overflow:clip;
+  background-color:#55bbbb;
+}
+#sidebar p{
+  width:100%;
+  background-color:#33aaaa;
+}
+#autoFullscreenButton{
+  color:red;
+}
 #display{
   overflow-wrap:break-word;
   color:white;
@@ -41,6 +48,23 @@ button{
   padding-top:5svh;
   text-align:right;
   vertical-align:text-bottom;
+}
+#FSalert{
+  text-align:center;
+  font-size:3svh;
+  color:white;
+  display:none;
+  position:fixed;
+  top:0;
+  left:5svh;
+  padding:5px;
+  margin:5px;
+  border:3px solid cyan;
+  border-radius:5px;
+  height:10svh;
+  width:40svh;
+  max-width:100px;
+  background:linear-gradient(0deg, black, #55bbbb);
 }
 .buttons{
   display:grid;

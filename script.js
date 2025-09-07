@@ -1,18 +1,32 @@
 function fullscreenToggle(){
-  if(document.fullscreen==false){
-    document.querySelector('body').requestFullscreen();
-  }
-  else{
-    document.exitFullscreen();
-}}
+  if(document.fullscreen==false)
+  {document.querySelector('body').requestFullscreen();}
+  else{document.exitFullscreen();}
+}
 
-function toggleHeader(isTrue){
-  if(isTrue){
-    document.getElementById('sidebar').style.display='inline';
+function autoFullscreenToggle(){
+  document.body.requestFullscreen();
+  document.getElementById("FSalert").style.display="none";
+  document.removeEventListener('click', autoFullscreenToggle);
+}
+function updateLocalSettings(buttonText){
+  if(buttonText=="Off"){
+    localStorage.setItem("autoFullscreen", "true");
+    document.getElementById("autoFullscreenButton").style.color ="green";
+    document.getElementById("autoFullscreenButton").innerText="On";
   }
   else{
-    document.getElementById('sidebar').style.display='none';
-}}
+    localStorage.setItem("autoFullscreen", "false")
+    document.getElementById("autoFullscreenButton").style.color ="red";
+    document.getElementById("autoFullscreenButton").innerText="Off";
+  }
+}
+
+function toggleSidebar(isTrue){
+  if(isTrue)
+  {document.getElementById('sidebar').style.display='inline';}
+  else{document.getElementById('sidebar').style.display='none';}
+}
 
 function clear(){
   const display=document.getElementById('display');
@@ -33,8 +47,7 @@ function clrOnRepeat(patternChar){
   let lastChar = str[str.length-1];
   if (lastChar == patternChar){
     clear();
-  }
-}
+}}
 
 function clrOnOperator(){
   let str=document.getElementById('display').innerHTML;
@@ -44,16 +57,6 @@ function clrOnOperator(){
   {clear();}
 }
 
-
-// Event Listener
-function eventDemo(){
-  document.querySelectorAll('.buttons button')
-    .forEach( (button) => button.addEventListener('click', (e) => {main(e.target.innerText)}));
-}
-function eventTests(){
-  document.querySelectorAll('.buttons button')
-    .forEach( (button) => button.addEventListener('click', (e) => alert(e.target.innerText)));
-}
 
 // Main function, entry point
 function main(input){
@@ -105,5 +108,30 @@ function main(input){
     default:
       alert("Button not found or implemented");
       break;
-  }
+}}
+
+// Adding Event Listeners here
+
+document.querySelectorAll('.buttons button').
+  forEach( (button) => button.
+    addEventListener('click', (e) => main(e.target.innerText))
+  );
+
+
+document.getElementById("autoFullscreenButton").
+  addEventListener('click', (e)=> updateLocalSettings(e.target.innerText))
+
+// Start Loading Saved setting(s)
+
+let userPref_autoFullscreen = localStorage.getItem("autoFullscreen");
+
+if( userPref_autoFullscreen == "true" ){
+  document.getElementById("autoFullscreenButton").style.color ="green";
+  document.getElementById("autoFullscreenButton").innerText="On";
+  document.getElementById("FSalert").style.display="inline";
+
+  //event listener for autofullscreen, removed automatically after fullscreened
+  //to allow exitfullscreen later
+
+  document.addEventListener('click', autoFullscreenToggle);
 }
